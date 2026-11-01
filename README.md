@@ -10,9 +10,9 @@ Restores the content of the 2005 PC release that was cut from **Fate/hollow atar
 - The 2005 PC game with the fan patches (`patch3.xp3`, `patch_lang_english.xp3` and the `Android` folder). The fan demosaic patch (`patch_decensor.xp3`) is optional and adds uncensored CGs.
 - About 2 GB of free space, and an internet connection the first time.
 
-## Setup
+## Install
 
-Required the Steam release of the Remaster and the original 2005 game with the fan-patch. You can find it at "sukebei.nyaa.si" and search "Fate/Hollow Ataraxia [English Patched, Voice Patch Final v1.0.0]". Run `FHA-Restoration-Launcher.exe`, choose original CGs, uncensored CGs or Off, and click **Play**. The first run takes a few minutes. To use Steam's Play button instead, set the game's launch options to `"<path>\FHA-Restoration-Launcher.exe" %command%`. There's an optional launch tester that will take you straight to the h-scene if you press start in the game.
+**Setup: Require the Steam release of the Remaster and the original 2005 game with the fan-patch. You can find it at "sukebei.nyaa.si" and search "Fate/Hollow Ataraxia [English Patched, Voice Patch Final v1.0.0]". Run `FHA-Restoration-Launcher.exe`, locate your games files for Steam and the original. Choose original CGs, uncensored fan-CGs or Off, and click **Play**. The first run takes a few minutes. To use Steam's Play button instead, set the game's launch options to `"<path>\FHA-Restoration-Launcher.exe" %command%`. There's an optional launch tester that will take you straight to the h-scene if you press start in the game.
 
 The only files you need from the 2005 data.xp3, image.xp3. fgimage.xp3, bgimage.xp3, sound.xp3, patch.xp3, patch2.xp3 and for the fan patches patch3.xp3, patch_lang_english.xp3 (the English patch), and Android\xp3filter.tjs (in the Android folder). The android patch is need because It’s the only place it gets the key to open the 2005 game’s archives, and without it the launcher can’t read the 2005 game at all. Optional: patch_decensor.xp3 (the fan demosaic patch). Without it, only the original CG option is offered.
 
