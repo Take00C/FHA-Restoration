@@ -594,8 +594,7 @@ class Launcher:
         except Exception as ex:  # noqa: BLE001
             messagebox.showerror(APP_NAME, str(ex))
             return
-        icon = "Caren's face as its icon" if self.picture.icons else "the launcher's icon (Caren's appears once your 2005 folder is found)"
-        messagebox.showinfo(APP_NAME, f"A shortcut \"FHA Restoration\" is now on your desktop, with {icon}.")
+        messagebox.showinfo(APP_NAME, "A shortcut \"FHA Restoration\" is now on your desktop.")
 
     def refresh_status(self):
         if not self.busy:

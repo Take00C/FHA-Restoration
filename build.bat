@@ -2,9 +2,9 @@
 rem Builds two single-file programs (no Python needed to run them):
 rem   dist\FHA-Restoration-Launcher.exe  the launcher, for players
 rem   dist\FHA-Scene-Tester.exe          plays one restored 18+ scene at a time, to check them in game
-rem Every module in fhar\ is bundled (they are imported by name at run time), plus side_art.py and
-rem the icon images the windows load at run time. No game art is bundled: the picture and the
-rem window icon are cut from the player's own 2005 files when the program runs.
+rem Every module in fhar\ is bundled (they are imported by name at run time), plus side_art.py.
+rem The launcher's icon is Caren's face, cut from your own 2005 game files by build_icon.py (no art
+rem is stored in this repository).
 rem Needs 64-bit Python 3.10-3.13 (the pinned NumPy has no packages for newer versions). It takes
 rem the first of 3.10 (the version the release was built and tested with), 3.13, 3.12 and 3.11 that
 rem the py launcher knows; set PY to use another interpreter, e.g. set PY=C:\Python312\python.exe.
@@ -22,18 +22,19 @@ echo Building with %PY%
 %PY% -m pip install -r requirements.txt pyinstaller==6.22.3 || goto :fail
 set HIDDEN=--hidden-import=side_art --hidden-import=launcher
 for %%f in (fhar\*.py) do set HIDDEN=!HIDDEN! --hidden-import=%%~nf
-rem the assets folder (icon, version details) is optional: without it the programs get Windows'
-rem default icon and no version details, and work the same
-set ART=
-if exist assets\launcher.ico set ART=--icon assets\launcher.ico --add-data "assets\launcher.ico;assets"
-if exist assets\launcher.png set ART=!ART! --add-data "assets\launcher.png;assets"
+rem icons: the launcher gets Caren's face from your 2005 files (Windows' default icon when they
+rem aren't found); the Scene Tester gets Windows' default. assets\ (version details) is optional.
+if not exist build mkdir build
+set ICON_L=--icon NONE
+for /f "usebackq delims=" %%i in (`%PY% build_icon.py`) do set ICON_L=--icon "%%i"
+echo Launcher icon: !ICON_L!
 set VL=
 set VT=
 if exist assets\version_launcher.txt set VL=--version-file assets\version_launcher.txt
 if exist assets\version_tester.txt set VT=--version-file assets\version_tester.txt
-set COMMON=--noconfirm --clean --onefile --windowed !ART! --paths . --paths fhar !HIDDEN! --collect-all soundfile
-%PY% -m PyInstaller !COMMON! --name FHA-Restoration-Launcher !VL! launcher.py || goto :fail
-%PY% -m PyInstaller !COMMON! --name FHA-Scene-Tester !VT! scene_tester.py || goto :fail
+set COMMON=--noconfirm --clean --onefile --windowed --paths . --paths fhar !HIDDEN! --collect-all soundfile
+%PY% -m PyInstaller !COMMON! !ICON_L! --name FHA-Restoration-Launcher !VL! launcher.py || goto :fail
+%PY% -m PyInstaller !COMMON! --icon NONE --name FHA-Scene-Tester !VT! scene_tester.py || goto :fail
 echo.
 echo Built: dist\FHA-Restoration-Launcher.exe and dist\FHA-Scene-Tester.exe
 pause
