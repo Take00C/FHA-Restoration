@@ -12,7 +12,7 @@ Restores the content of the 2005 PC release that was cut from **Fate/hollow atar
 
 ## Setup
 
-Required the Steam release of the Remaster and the original 2005 game with the fan-patch. You can find it at "sukebei.nyaa.si" and search "Fate/Hollow Ataraxia [English Patched, Voice Patch Final v1.0.0]"  Run `FHA-Restoration-Launcher.exe`, choose original CGs, uncensored CGs or Off, and click **Play**. The first run takes a few minutes. To use Steam's Play button instead, set the game's launch options to `"<path>\FHA-Restoration-Launcher.exe" %command%`.
+Required the Steam release of the Remaster and the original 2005 game with the fan-patch. You can find it at "sukebei.nyaa.si" and search "Fate/Hollow Ataraxia [English Patched, Voice Patch Final v1.0.0]".  Run `FHA-Restoration-Launcher.exe`, choose original CGs, uncensored CGs or Off, and click **Play**. The first run takes a few minutes. To use Steam's Play button instead, set the game's launch options to `"<path>\FHA-Restoration-Launcher.exe" %command%`.
 
 The launcher adds two files to the game's `obb` folder and changes nothing else; **Off** removes them. Achievements work as normal. Restored lines use the 2005 Japanese and the Beast's Lair English translation; in Chinese mode they appear in Japanese or English. The Eclipse scenes are on the Eclipse map in the morning, once the 2005 conditions for each heroine are met.
 
