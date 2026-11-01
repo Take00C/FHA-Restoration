@@ -1,0 +1,22 @@
+work/
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec
+.venv/
+*.zip
+# game files, and what a --work folder inside the repo would hold (keys, decrypted text,
+# prepared builds, the cut art, the tester's save backup, settings with your folder paths)
+*.bin
+*.xp3
+*.tlg
+*.epk
+keys/
+cache/
+fan-txt/
+rm/
+scenetest/
+art/
+settings.json
+*.fhar-tmp

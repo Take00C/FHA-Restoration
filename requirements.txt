@@ -1,0 +1,5 @@
+# What fha_restore.py (the command line) needs: 64-bit Python 3.10-3.13 (NumPy 2.2.6 has no
+# packages for newer versions). build.bat installs these plus PyInstaller.
+pillow==12.3.0
+numpy==2.2.6
+soundfile==0.14.0
